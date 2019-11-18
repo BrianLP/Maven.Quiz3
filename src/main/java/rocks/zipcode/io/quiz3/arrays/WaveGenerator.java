@@ -5,6 +5,19 @@ package rocks.zipcode.io.quiz3.arrays;
  */
 public class WaveGenerator {
     public static String[] wave(String str) {
-        return null;
+        String[] strArray = new String[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+
+            String str2= str.toLowerCase();
+            if (str2.charAt(i)=='_'||str2.charAt(i)==' '){
+                str2+=str2.charAt(i);
+            }
+            String placeIt = str2.substring(i,1).toUpperCase();
+            str2+=",\n";
+            strArray[i]=str2;
+
+
+        }
+        return strArray;
     }
 }
