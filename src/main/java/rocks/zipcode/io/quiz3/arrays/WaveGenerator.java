@@ -1,23 +1,23 @@
 package rocks.zipcode.io.quiz3.arrays;
 
+import rocks.zipcode.io.quiz3.fundamentals.StringUtils;
+
+import java.util.ArrayList;
+
 /**
  * @author leon on 09/12/2018.
  */
 public class WaveGenerator {
+
     public static String[] wave(String str) {
-        int placeholder=0;
-        String[] strArray = new String[str.length()];
-        for (int i = 0; i < strArray.length; i++) {
-
-            String str2 = str.toLowerCase();
-            if (str2.charAt(i)=='_'||str2.charAt(i)==' ') {
-                placeholder++;
-            }else{
-            }String placeIt = str2.substring(0,i-1)+str2.substring(i,1).toUpperCase()+str2.substring(i+1)+",\n";
-            strArray[i]=placeIt;
-
+        ArrayList <String> wavey = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isAlphabetic(str.charAt(i))) {
+                wavey.add(StringUtils.capitalizeNthCharacter(str.toLowerCase(), i));
+            }
 
         }
-        return strArray;
+        return wavey.toArray(new String[0]);
     }
 }
+

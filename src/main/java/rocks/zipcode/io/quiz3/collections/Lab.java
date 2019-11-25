@@ -12,6 +12,7 @@ public class Lab {
 
     public Lab(String labName) {
         this.labname=labName;
+        this.labStatus=LabStatus.INCOMPLETE;
     }
 
     public String getName() {
@@ -25,4 +26,5 @@ public class Lab {
     public LabStatus getStatus() {
         return this.labStatus;
     }
+
 }
